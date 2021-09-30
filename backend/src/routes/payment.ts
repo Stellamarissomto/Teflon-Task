@@ -1,11 +1,12 @@
-import express from 'express';
+import express, { Router } from 'express';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
+
 import { SuccessResponse } from '../core/appResponse'
 
 const router = express.Router();
 
-// bemaswitch 
+     /* ---- bemaswitch ----*/
 router.post('/bemaswitch', async(req, res) => {
     
     //initiate bank transfer 
@@ -34,7 +35,6 @@ router.post('/bemaswitch', async(req, res) => {
             "charge_type": "bank_transfer",
             "uuid": initiate.data.data.uuid
           }
-
           const authorize = await axios.post(`${process.env.HOST}/v1/charges/authorize`, body, config);
           new SuccessResponse('sucessfully authorized', authorize.data).send(res)
        }
@@ -42,10 +42,38 @@ router.post('/bemaswitch', async(req, res) => {
     } catch (err) {
         console.log(err);
     }
-
-
-
 })
+
+//paystack 
+
+router.post('/paystack', async(req, res) => {
+    
+    //initiate bank transfer 
+    const config = {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: process.env.PKEY,
+        },
+      };
+
+    const transaction_id = uuidv4();
+    const body = {
+        "reference": transaction_id,
+        "email": "stellamarissomto@gmail.com",
+        "amount": 10,
+        "currency": "NGN", 
+    }
+    try {
+    await axios.post(`${process.env.PAYSTACK}transaction/initialize`, body, config);
+        
+    } catch (err) {
+        res.redirect(307, 'http://localhost:5002/v1/pay/bemaswitch');
+    }
+})
+
+
+
+
 
 
 
