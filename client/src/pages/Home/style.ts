@@ -84,7 +84,7 @@ margin-top: ${px2vw(80,414)};
 @media (min-width: 1024px){
     width: ${px2vw(580,1440)};
     height: ${px2vw(520,1440)};
-    margin-top: ${px2vw(38,1440)};
+    margin-top: ${px2vw(45,1440)};
     margin-left: ${px2vw(150,1440)};
 
 }
@@ -98,7 +98,7 @@ margin-left: ${px2vw(16,414)};
 
 @media (min-width: 1024px){
  display: flex;
- margin-left: ${px2vw(100,1440)};
+ margin-left: ${px2vw(150,1440)};
  margin-top: ${px2vw(32,1440)};
 
  
