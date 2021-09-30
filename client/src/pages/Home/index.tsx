@@ -6,7 +6,7 @@ const Home: React.FC = () => {
     return (
       <Whole>
         <Hero>
-          <h2> Best Sound Stero for your home</h2>
+          <h1> Best Sound Stero for your home</h1>
           <p> Ortizan Portable Bluetooth Speaker, IPX7 Waterproof Wireless Speaker with 24W Loud Stereo Sound, O
             utdoor Speakers with Bluetooth 5.0, 30H Playtime,66ft Bluetooth Range, Dual Pairing for Home
             </p>

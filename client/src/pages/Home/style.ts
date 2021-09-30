@@ -3,7 +3,7 @@ import px2vw from "../../utili/px2vw";
 
 export const Hero = styled.div`
 
-h2{
+h1{
 font-family: Source Sans Pro;
 font-style: normal;
 font-weight: bold;
@@ -19,9 +19,9 @@ width: ${px2vw(361,414)};
 height: ${px2vw(120,414)};
 
 @media (min-width: 1024px){
-    font-size:${px2vw(50,1440)};
-    width: ${px2vw(398,1440)};
-    height: ${px2vw(128,1440)};
+    font-size:${px2vw(60,1440)};
+    width: ${px2vw(450,1440)};
+    height: ${px2vw(148,1440)};
  
 }
 }
@@ -42,7 +42,7 @@ color: #000000;
 
 @media (min-width: 1024px){
     font-size:${px2vw(20,1440)};
-    width: ${px2vw(387,1440)};
+    width: ${px2vw(400,1440)};
     height: ${px2vw(166,1440)};
  
 }
@@ -84,7 +84,7 @@ margin-top: ${px2vw(80,414)};
 @media (min-width: 1024px){
     width: ${px2vw(580,1440)};
     height: ${px2vw(520,1440)};
-    margin-top: ${px2vw(32,1440)};
+    margin-top: ${px2vw(38,1440)};
     margin-left: ${px2vw(150,1440)};
 
 }
