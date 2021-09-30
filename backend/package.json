@@ -1,0 +1,26 @@
+{
+  "name": "payment-swift",
+  "version": "1.0.0",
+  "description": "payment backend api ",
+  "main": "server.ts",
+  "scripts": {
+    "start": "SET NODE_ENV=production &&  npx tsc & nodemon ./build/server.js",
+    "dev": " npx tsc && nodemon ./build/server.js",
+    "build": "npx tsc"
+  },
+  "author": "ikeonyia somtochukwu",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.13",
+    "@types/morgan": "^1.9.3",
+    "@types/node": "^16.10.2",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.13"
+  }
+}
