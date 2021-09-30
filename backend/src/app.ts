@@ -7,7 +7,7 @@ import morgan from 'morgan';
 dotenv.config({ path: 'src/config/config.env' });
 
 // route file
-import routesV1 from '../src/routes';
+import routesV1 from './routes';
 
 const app = express();
 app.use(express.json());
