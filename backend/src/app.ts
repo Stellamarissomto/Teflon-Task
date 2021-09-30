@@ -7,14 +7,14 @@ import morgan from 'morgan';
 dotenv.config({ path: 'src/config/config.env' });
 
 // route file
-//import routesV1 from '../src/routes';
+import routesV1 from '../src/routes';
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // mounte route
-//app.use('/v1', routesV1);
+app.use('/v1', routesV1);
 
 // Add headers to prevent cors
 app.use(function (req, res, next) {
