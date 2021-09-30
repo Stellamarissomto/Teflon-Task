@@ -44,7 +44,7 @@ router.post('/bemaswitch', async(req, res) => {
     }
 })
 
-//paystack 
+
 
 router.post('/paystack', async(req, res) => {
     
