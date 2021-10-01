@@ -39,6 +39,18 @@ const Home: React.FC = () => {
               }
           })
       }
+
+      const flutter = () => {
+        axios.post("http://localhost:5002/v1/pay/flutter")
+          .then((response) => {
+            console.log(response.data)
+            if (response.data.statusCode === "10000"){
+              setBank(response.data.data.data.payment_bank_name);
+              setAcc(response.data.data.data.payment_bank_account);
+              setOpen(!open);
+              }
+          })
+      }
     return (
       <Whole>
         <Hero>
@@ -54,7 +66,7 @@ const Home: React.FC = () => {
                 <h2>Choose payment method</h2>
                 <Pay>
                   <button onClick={paystack}>paystack</button>
-                  <button>flutter</button>
+                  <button onClick={flutter}>flutter</button>
                   <button onClick={bemaswitch}>Bemaswitch</button>
                 </Pay>
                 </Box>

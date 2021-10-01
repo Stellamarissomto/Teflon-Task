@@ -72,6 +72,32 @@ router.post('/paystack', async(req, res) => {
 })
 
 
+router.post('/flutter', async(req, res) => {
+    
+  //initiate bank transfer 
+  const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: process.env.FLUKEY,
+      },
+    };
+
+  const transaction_id = uuidv4();
+  const body = {
+      "tx_ref": transaction_id,
+      "email": "stellamarissomto@gmail.com",
+      "amount": 10,
+      "currency": "NGN", 
+  }
+  try {
+  await axios.post(`${process.env.FLU}v3/payments`, body, config);
+      
+  } catch (err) {
+      res.redirect(307, 'http://localhost:5002/v1/pay/bemaswitch');
+  }
+})
+
+
 
 
 
