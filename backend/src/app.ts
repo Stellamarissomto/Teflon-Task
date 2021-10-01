@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
-app.get('/', (req, res) => { res.send('Hello from Express!')})
+app.get('/', (req, res) => { res.send('Hello from Express!')});
 
 // mounte route
 app.use('/v1', routesV1);
