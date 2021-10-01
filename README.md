@@ -1,8 +1,8 @@
 ## Bemaswitch pay
 site link: https://teflonpay.netlify.app/
-
-Frontend Hosted on Netlify
-Backend Hosted on Heroku
+ 
+* Frontend Hosted on Netlify
+* Backend Hosted on Heroku
 
 ## Endpoints
 
