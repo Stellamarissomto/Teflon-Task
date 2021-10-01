@@ -109,9 +109,30 @@ margin-left: ${px2vw(16,414)};
 export const Box = styled.div`
 background: white;
 position: absolute;
-left: 25%;
-right: 25%;
-top: 25%;
-bottom: 25%;
-margin: auto;
+left: 3%;
+right: 3%;
+top: 20%;
+bottom: 20%;
+
+
+h2{
+text-align: center;
+}
+
+@media (min-width: 1024px){
+left: 20%;
+right: 20%;
+top: 20%;
+bottom: 20%;
+}
+`
+export const Pay = styled.div`
+display: flex;
+flex-direction: column;
+margin-left:  ${px2vw(13,414)};
+
+@media (min-width: 1024px){
+    margin-left:  ${px2vw(254,1440)};
+}
+
 `

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {images } from '../../image';
-import {Hero, Himage, Whole, Box} from './style';
+import {Hero, Himage, Whole, Box, Pay} from './style';
 import Modal from './../../component/Modal';
 import axios from 'axios';
 
@@ -32,6 +32,11 @@ const Home: React.FC = () => {
         axios.post("http://localhost:5002/v1/pay/paystack")
           .then((response) => {
             console.log(response.data)
+            if (response.data.statusCode === "10000"){
+              setBank(response.data.data.data.payment_bank_name);
+              setAcc(response.data.data.data.payment_bank_account);
+              setOpen(!open);
+              }
           })
       }
     return (
@@ -46,12 +51,12 @@ const Home: React.FC = () => {
               isOpen && (
                 <Modal  handleClose={togglePopup}>
                 <Box>
-                <h3>Choose payment method</h3>
-                <div>
+                <h2>Choose payment method</h2>
+                <Pay>
                   <button onClick={paystack}>paystack</button>
                   <button>flutter</button>
                   <button onClick={bemaswitch}>Bemaswitch</button>
-                </div>
+                </Pay>
                 </Box>
              </Modal>
 
@@ -62,9 +67,9 @@ const Home: React.FC = () => {
               open && (
                 <Modal  handleClose={togglePopup}>
                 <Box>
-                <h3>Make Payment Through Bemaswotch Wema Transfer</h3>
-                <h3>{bank}</h3>
-                <h3>{acc}</h3>
+                <h2>Make Payment Through Bemaswitch Wema Transfer</h2>
+                <h2>Bank: {bank}</h2>
+                <h2>Account: {acc}</h2>
                 </Box>
              </Modal>
 
