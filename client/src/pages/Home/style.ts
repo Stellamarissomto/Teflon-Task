@@ -57,6 +57,7 @@ font-weight: bold;
 font-size: ${px2vw(20,414)};
 line-height: 160.2%;
 /* identical to box height, or 48px */
+border:none;
 
 text-transform: capitalize;
 margin-top: ${px2vw(30,414)};
@@ -103,4 +104,14 @@ margin-left: ${px2vw(16,414)};
 
  
 }
+`
+
+export const Box = styled.div`
+background: white;
+position: absolute;
+left: 25%;
+right: 25%;
+top: 25%;
+bottom: 25%;
+margin: auto;
 `
