@@ -1,7 +1,7 @@
 import app from './app';
 
 
-const PORT = process.env.NODE_ENV === 'production' ? 8080 : 5002;
+const PORT =  process.env.PORT || 5002
 
 const server = app.listen(PORT, () => {
   console.log(`server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
