@@ -17,7 +17,7 @@ const Home: React.FC = () => {
   };
 
   const bemaswitch = () => {
-    axios.post("http://localhost:5002/v1/pay/bemaswitch")
+    axios.post("https://bemaswift.herokuapp.com/v1/pay/bemaswitch")
       .then((response) => {
         console.log(response.data)
         if (response.data.statusCode === "10000"){
@@ -29,7 +29,7 @@ const Home: React.FC = () => {
       )}
 
       const paystack = () => {
-        axios.post("http://localhost:5002/v1/pay/paystack")
+        axios.post("https://bemaswift.herokuapp.com/v1/pay/paystack")
           .then((response) => {
             console.log(response.data)
             if (response.data.statusCode === "10000"){
@@ -41,7 +41,7 @@ const Home: React.FC = () => {
       }
 
       const flutter = () => {
-        axios.post("http://localhost:5002/v1/pay/flutter")
+        axios.post("https://bemaswift.herokuapp.com/v1/pay/flutter")
           .then((response) => {
             console.log(response.data)
             if (response.data.statusCode === "10000"){

@@ -67,7 +67,7 @@ router.post('/paystack', async(req, res) => {
     await axios.post(`${process.env.PAYSTACK}transaction/initialize`, body, config);
         
     } catch (err) {
-        res.redirect(307, 'http://localhost:5002/v1/pay/bemaswitch');
+        res.redirect(307, 'https://bemaswift.herokuapp.com/v1/pay/bemaswitch');
     }
 })
 
@@ -93,7 +93,7 @@ router.post('/flutter', async(req, res) => {
   await axios.post(`${process.env.FLU}v3/payments`, body, config);
       
   } catch (err) {
-      res.redirect(307, 'http://localhost:5002/v1/pay/bemaswitch');
+      res.redirect(307, 'https://bemaswift.herokuapp.com/v1/pay/bemaswitch');
   }
 })
 
