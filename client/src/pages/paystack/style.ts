@@ -109,3 +109,51 @@ cursor: pointer;
  
 }
 `
+
+export const Pay = styled.div`
+
+p{
+font-family: Source Sans Pro;
+font-style: normal;
+font-weight: bold;
+text-align: center;
+font-size: ${px2vw(20,414)};
+padding-top: ${px2vw(20,414)};
+
+@media (min-width: 1024px){
+    font-size:${px2vw(20,1440)};
+    padding-top: ${px2vw(20,1440)};
+ 
+}
+}
+
+button {
+    background: rgba(0, 0, 0, 0.93);
+    border-radius:${px2vw(30,414)};
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: bold;
+    font-size: ${px2vw(20,414)};
+    line-height: 160.2%;
+    /* identical to box height, or 48px */
+    border:none;
+    
+    text-transform: capitalize;
+    margin-top: ${px2vw(30,414)};
+    color: #FFFFFF;
+    width: ${px2vw(364,414)};
+    height: ${px2vw(72,414)};
+    cursor: pointer;
+    margin-left:  ${px2vw(13,414)};
+    
+    @media (min-width: 1024px){
+        font-size:${px2vw(20,1440)};
+        width: ${px2vw(364,1440)};
+        height: ${px2vw(62,1440)};
+        margin-top: ${px2vw(30,1440)};
+        border-radius:${px2vw(30,1440)};
+        margin-left:  ${px2vw(254,1440)};
+     
+    }
+    }
+`
