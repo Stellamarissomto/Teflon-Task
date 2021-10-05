@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from "react-router-dom";
 import {images } from '../../image';
 import {Hero, Himage, Whole, Box, Pay} from './style';
 import Modal from './../../component/Modal';
@@ -11,6 +12,8 @@ const Home: React.FC = () => {
   const [open, setOpen ] = useState(false);
   const [bank, setBank ] = useState();
   const [acc, setAcc ] = useState();
+
+  const history = useHistory();
 
   const togglePopup = () => {
     setIsOpen(!isOpen);
@@ -28,7 +31,7 @@ const Home: React.FC = () => {
         }
       )}
 
-      const paystack = () => {
+     /* const paystack = () => {
         axios.post("https://bemaswift.herokuapp.com/v1/pay/paystack")
           .then((response) => {
             console.log(response.data)
@@ -37,10 +40,9 @@ const Home: React.FC = () => {
               setAcc(response.data.data.data.payment_bank_account);
               setOpen(!open);
               }
-          })
-      }
+          }) */
 
-      const flutter = () => {
+      /* const flutter = () => {
         axios.post("https://bemaswift.herokuapp.com/v1/pay/flutter")
           .then((response) => {
             console.log(response.data)
@@ -50,7 +52,7 @@ const Home: React.FC = () => {
               setOpen(!open);
               }
           })
-      }
+      } */
     return (
       <Whole>
         <Hero>
@@ -65,8 +67,8 @@ const Home: React.FC = () => {
                 <Box>
                 <h2>Choose payment method</h2>
                 <Pay>
-                  <button onClick={paystack}>paystack</button>
-                  <button onClick={flutter}>flutter</button>
+                  <button onClick={()=> history.push('/paystack')}>paystack</button>
+                  <button onClick={()=> history.push('/flutter')}>flutter</button>
                   <button onClick={bemaswitch}>Bemaswitch</button>
                 </Pay>
                 </Box>

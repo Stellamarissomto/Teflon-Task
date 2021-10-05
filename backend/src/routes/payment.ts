@@ -53,6 +53,7 @@ router.post('/paystack', async(req, res) => {
         headers: {
           "Content-Type": "application/json",
           Authorization: process.env.PKEY,
+          'cache-control': 'no-cache'
         },
       };
 
@@ -60,13 +61,15 @@ router.post('/paystack', async(req, res) => {
     const body = {
         "reference": transaction_id,
         "email": "stellamarissomto@gmail.com",
-        "amount": 10,
+        "amount": 100,
         "currency": "NGN", 
     }
     try {
-    await axios.post(`${process.env.PAYSTACK}transaction/initialize`, body, config);
-        
+    const init = await axios.post(`${process.env.PAYSTACK}transaction/initialize`, body, config);
+    new SuccessResponse('sucess', init.data).send(res)     
+
     } catch (err) {
+      //console.log(err)
         res.redirect(307, 'https://bemaswift.herokuapp.com/v1/pay/bemaswitch');
     }
 })
