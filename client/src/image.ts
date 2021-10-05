@@ -2,6 +2,7 @@ export type ImageName = keyof typeof images
 
 export const images = {
     speaker: 'assets/speaker.png',
-    plogo: 'assets/paystack.svg'
+    plogo: 'assets/paystack.svg',
+    flutter: 'assets/flutter.png',
   
 }
