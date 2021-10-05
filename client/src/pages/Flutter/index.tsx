@@ -1,4 +1,5 @@
 import React,{useState} from 'react';
+import { useHistory } from "react-router-dom";
 import {images } from '../../image'
 import Contain from '../../component/container';
 import {Form, Input, Inner, Pay} from '../paystack/style';
@@ -8,6 +9,7 @@ import { Box } from '../Home/style';
 
 const Paystack: React.FC = () => {
     const [isOpen, setIsOpen ] = useState(false);
+    const history = useHistory();
     const [formData, setFormData] = useState({
         cardnum: "",
         date: "",
@@ -66,7 +68,7 @@ const Paystack: React.FC = () => {
                 <Box>
                 <Pay>
                   <p>Transaction failed. Please make payment with bemaswitch wema Transfer</p>
-                  <button>Bemaswitch</button>
+                  <button onClick={()=> history.push('/bemaswitch')} >Bemaswitch</button>
                 </Pay>
                 </Box>
              </Modal>

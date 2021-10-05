@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Contain from '../../component/container';
+import { useHistory } from "react-router-dom";
 import {images } from '../../image';
 import {Head, Form, Input, Inner, Button, Pay} from './style';
 import Modal from './../../component/Modal';
@@ -7,6 +8,9 @@ import { Box } from '../Home/style';
 
 const Paystack: React.FC = () => {
     const [isOpen, setIsOpen ] = useState(false);
+     
+    const history = useHistory();
+  
     const [formData, setFormData] = useState({
         cardnum: "",
         date: "",
@@ -18,10 +22,10 @@ const Paystack: React.FC = () => {
         setIsOpen(!isOpen);
      };
 
+  
      const onChange = (e: any) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
-
-
+    
     
     return (
         <div>
@@ -66,7 +70,7 @@ const Paystack: React.FC = () => {
                 <Box>
                 <Pay>
                   <p>Transaction failed. Please make payment with bemaswitch wema Transfer</p>
-                  <button>Bemaswitch</button>
+                  <button onClick={()=> history.push('/bemaswitch')}>Bemaswitch</button>
                 </Pay>
                 </Box>
              </Modal>
@@ -74,6 +78,7 @@ const Paystack: React.FC = () => {
               )
             
             }
+
         </div>
     )
 }
